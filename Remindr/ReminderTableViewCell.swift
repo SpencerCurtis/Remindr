@@ -1,5 +1,5 @@
 //
-//  remindrTableViewCell.swift
+//  RemindrTableViewCell.swift
 //  Capstoneremindr
 //
 //  Created by Spencer Curtis on 3/23/16.
@@ -8,14 +8,14 @@
 
 import UIKit
 
-class remindrTableViewCell: UITableViewCell {
+class RemindrTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var noteLabel: UILabel!
     @IBOutlet weak var alertLabel: UILabel!
     @IBOutlet weak var checkboxButton: UIButton!
     
-    var delegate: remindrTableViewCellDelegate?
+    var delegate: RemindrTableViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -41,12 +41,12 @@ class remindrTableViewCell: UITableViewCell {
     }
     
 }
-protocol remindrTableViewCellDelegate {
-    func remindrCellTapped(_ checkboxButton: UIButton, sender: remindrTableViewCell)
+protocol RemindrTableViewCellDelegate {
+    func remindrCellTapped(_ checkboxButton: UIButton, sender: RemindrTableViewCell)
 }
 
 
-extension remindrTableViewCell {
+extension RemindrTableViewCell {
     func updateWithremindr(_ remindr: Remindr) {
         titleLabel.text = remindr.title
         noteLabel.text = remindr.notes

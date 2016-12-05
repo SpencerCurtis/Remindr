@@ -1,6 +1,6 @@
     //
-    //  remindrDetailViewController.swift
-    //  Capstoneremindr
+    //  RemindrDetailViewController.swift
+    //  Remindr
     //
     //  Created by Spencer Curtis on 3/23/16.
     //  Copyright © 2016 Spencer Curtis. All rights reserved.
@@ -33,14 +33,11 @@
     }
     
     
-    class remindrDetailViewController: UIViewController, CLLocationManagerDelegate {
-        
-        static let sharedController = remindrDetailViewController()
+    class RemindrDetailViewController: UIViewController, CLLocationManagerDelegate {
+
         
         @IBOutlet weak var header: UINavigationItem!
         @IBOutlet weak var saveButton: UIBarButtonItem!
-        @IBOutlet weak var updatingLocationView: UIView!
-        @IBOutlet weak var alertTimeDatePicker: UIDatePicker!
         @IBOutlet weak var titleTextField: UITextField!
         @IBOutlet weak var notesTextView: UITextView!
         @IBOutlet weak var alertSegmentedControl: UISegmentedControl!
@@ -48,6 +45,7 @@
         @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
         @IBOutlet weak var atALocationLabel: UILabel!
         @IBOutlet weak var uponMovingFromLocationLabel: UILabel!
+        var updatingLocationView: UIView!
         
         
         var alertTimeValue = Date()
@@ -55,6 +53,7 @@
         
         override func viewDidLoad() {
             super.viewDidLoad()
+            setupUpdatingLocationView()
             notesTextView.sizeToFit()
             titleTextField.delegate = self
             if remindr != nil {
@@ -65,6 +64,16 @@
             uponMovingFromLocationLabel.text = "You will be reminded upon moving from this location."
             LocationController.sharedController.requestAuthorization()
             
+        }
+        
+        func setupUpdatingLocationView() {
+            let updatingLocationView = UIView(frame: self.view.bounds)
+            updatingLocationView.backgroundColor = .black
+            
+            updatingLocationView.alpha = 0.75
+            updatingLocationView.isHidden = true
+            
+            UIApplication.shared.keyWindow?.addSubview(updatingLocationView)
             
         }
         
@@ -123,6 +132,7 @@
         }
         
         @IBAction func UponMovingSegmentedControlTapped(_ sender: AnyObject) {
+            self.view.endEditing(true)
             if alertSegmentedControl.selectedSegmentIndex == 2 {
                 // MAKE SURE THEY HAVE PERMISSION
                 setUpViewsBasedOnSegmentedControl()
@@ -280,7 +290,7 @@
                         alertLabelText =  "At \(remindrTimeString)"
                         let newremindr = Remindr(title: title, notes: notes!, remindrTime: remindrTime, alertLabelText: alertLabelText)
                         remindrController.sharedController.addremindr(newremindr)
-                        NotificationController.sharedController.sendNotificationForRemindrWithTime(newremindr, fireDate: alertTimeDatePicker.date)
+                        NotificationController.sharedController.sendNotificationForRemindrWithTime(newremindr, fireDate: alertDatePicker.date)
                     }
                     
                     

@@ -65,7 +65,7 @@ class RegionController {
         }
     }
     
-    func stopMonitoringremindr(_ remindr: Remindr) {
+    func stopMonitoring(remindr: Remindr) {
         for region in LocationController.sharedController.locationManager.monitoredRegions {
             if let circularRegion = region as? CLCircularRegion {
                 if circularRegion.identifier == remindr.title {

@@ -9,9 +9,8 @@
 import UIKit
 import CoreLocation
 
-class remindrListTableViewController: UITableViewController, CLLocationManagerDelegate {
+class RemindrListTableViewController: UITableViewController, CLLocationManagerDelegate {
     
-    static let sharedController = remindrListTableViewController()
     
     @IBOutlet weak var searchBarView: UIView!
     @IBOutlet weak var remindrFilterSegmentedControl: UISegmentedControl!
@@ -64,25 +63,25 @@ class remindrListTableViewController: UITableViewController, CLLocationManagerDe
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var returnInt = 0
         if remindrFilterSegmentedControl.selectedSegmentIndex == 0 {
-            returnInt = remindrController.sharedController.incompleteremindrs.count
+            returnInt = remindrController.sharedController.incompleteRemindrs.count
         } else if remindrFilterSegmentedControl.selectedSegmentIndex == 1 {
-            returnInt = remindrController.sharedController.completeremindrs.count
+            returnInt = remindrController.sharedController.completeRemindrs.count
         }
         return returnInt
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "remindrCell", for: indexPath) as! remindrTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "remindrCell", for: indexPath) as! RemindrTableViewCell
         if remindrFilterSegmentedControl.selectedSegmentIndex == 0 {
-            let remindr = remindrController.sharedController.incompleteremindrs[indexPath.row]
+            let remindr = remindrController.sharedController.incompleteRemindrs[indexPath.row]
             cell.delegate = self
             cell.updateWithremindr(remindr)
             if let bool = remindr.isComplete?.boolValue {
                 cell.updateButton(bool)
             }
         } else if remindrFilterSegmentedControl.selectedSegmentIndex == 1 {
-            let remindr = remindrController.sharedController.completeremindrs[indexPath.row]
+            let remindr = remindrController.sharedController.completeRemindrs[indexPath.row]
             cell.delegate = self
             cell.updateWithremindr(remindr)
         }
@@ -108,7 +107,7 @@ class remindrListTableViewController: UITableViewController, CLLocationManagerDe
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "editremindr" {
-            let dvc = segue.destination as? remindrDetailViewController
+            let dvc = segue.destination as? RemindrDetailViewController
             
             if let remindrDetailViewController = dvc {
                 _ = remindrDetailViewController.view
@@ -125,17 +124,17 @@ class remindrListTableViewController: UITableViewController, CLLocationManagerDe
 
 
 
-extension remindrListTableViewController: remindrTableViewCellDelegate {
+extension RemindrListTableViewController: RemindrTableViewCellDelegate {
     
-    func remindrCellTapped(_ checkboxButton: UIButton, sender: remindrTableViewCell) {
+    func remindrCellTapped(_ checkboxButton: UIButton, sender: RemindrTableViewCell) {
         guard let indexPath = tableView.indexPath(for: sender) else { return }
         
         var remindr: Remindr?
         
         if remindrFilterSegmentedControl.selectedSegmentIndex == 0 {
-            remindr = remindrController.sharedController.incompleteremindrs[indexPath.row]
+            remindr = remindrController.sharedController.incompleteRemindrs[indexPath.row]
         } else if remindrFilterSegmentedControl.selectedSegmentIndex == 1 {
-            remindr = remindrController.sharedController.completeremindrs[indexPath.row]
+            remindr = remindrController.sharedController.completeRemindrs[indexPath.row]
         }
         
         
@@ -147,7 +146,7 @@ extension remindrListTableViewController: remindrTableViewCellDelegate {
                 
                 remindrController.sharedController.saveToPersistentStorage()
                 if let remindr = remindr {
-                    RegionController.sharedController.stopMonitoringremindr(remindr)
+                    RegionController.sharedController.stopMonitoring(remindr: remindr)
                     NotificationController.sharedController.removeNotificationFor(remindr: remindr)
                 }
                 

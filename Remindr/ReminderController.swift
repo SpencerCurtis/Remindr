@@ -39,32 +39,32 @@ class remindrController {
     static let sharedController = remindrController()
     
     var remindrs: [Remindr] {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "remindr")
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Remindr")
         
         do {
             guard let remindrs = try Stack.context.fetch(request) as? [Remindr] else { return [] }
-            remindrs.sorted(by: {$0.creationDate?.timeIntervalSince1970 > $1.creationDate?.timeIntervalSince1970})
-            return remindrs
+            let remindrsArray = remindrs.sorted(by: {$0.creationDate?.timeIntervalSince1970 > $1.creationDate?.timeIntervalSince1970})
+            return remindrsArray
         } catch {
             print(error.localizedDescription)
             return []
         }
     }
     
-    var completeremindrs: [Remindr] {
+    var completeRemindrs: [Remindr] {
         return remindrs.filter({$0.isComplete!.boolValue})
     }
     
-    var incompleteremindrs: [Remindr] {
+    var incompleteRemindrs: [Remindr] {
         return remindrs.filter({!$0.isComplete!.boolValue})
     }
     
     var incompleteremindrsWithLocationUponLeaving: [Remindr] {
-        return incompleteremindrs.filter({$0.alertLabelText == "Upon Moving"})
+        return incompleteRemindrs.filter({$0.alertLabelText == "Upon Moving"})
     }
     
     var incompleteremindrsWithLocationUponArriving: [Remindr] {
-        return incompleteremindrs.filter({$0.alertLabelText == "Upon Arriving"})
+        return incompleteRemindrs.filter({$0.alertLabelText == "Upon Arriving"})
     }
     
     
@@ -90,7 +90,7 @@ class remindrController {
             LocationController.sharedController.decreaseLocationCount()
         }
         if remindr.alertLabelText == "Upon Arriving" {
-            RegionController.sharedController.stopMonitoringremindr(remindr)
+            RegionController.sharedController.stopMonitoring(remindr: remindr)
         }
         saveToPersistentStorage()
         
