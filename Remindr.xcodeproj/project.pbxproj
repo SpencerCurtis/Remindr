@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4630E5391E413E0D00B591C9 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4630E5381E413E0D00B591C9 /* CustomTabBar.swift */; };
 		46B4D4D01DF5C87900B33A73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4D4CF1DF5C87900B33A73 /* AppDelegate.swift */; };
 		46B4D4DA1DF5C87900B33A73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46B4D4D81DF5C87900B33A73 /* LaunchScreen.storyboard */; };
 		46B4D4FF1DF5C8BC00B33A73 /* AppColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4D4E21DF5C8BC00B33A73 /* AppColorPalette.swift */; };
@@ -33,9 +34,12 @@
 		46B4D5151DF5C8BC00B33A73 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4D4FC1DF5C8BC00B33A73 /* ThirdViewController.swift */; };
 		46B4D5161DF5C8BC00B33A73 /* WalkThroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4D4FD1DF5C8BC00B33A73 /* WalkThroughPageViewController.swift */; };
 		46B4D51D1DF5CE3A00B33A73 /* Remindr.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 46B4D51B1DF5CE3A00B33A73 /* Remindr.xcdatamodeld */; };
+		46FF67E61E413C6F0000C9E0 /* VersionTwo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46FF67E41E413C6F0000C9E0 /* VersionTwo.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4630E5371E413DAC00B591C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
+		4630E5381E413E0D00B591C9 /* CustomTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		46B4D4CC1DF5C87900B33A73 /* Remindr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remindr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46B4D4CF1DF5C87900B33A73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46B4D4D91DF5C87900B33A73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -64,6 +68,7 @@
 		46B4D4FC1DF5C8BC00B33A73 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThirdViewController.swift; path = Remindr/ThirdViewController.swift; sourceTree = "<group>"; };
 		46B4D4FD1DF5C8BC00B33A73 /* WalkThroughPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WalkThroughPageViewController.swift; path = Remindr/WalkThroughPageViewController.swift; sourceTree = "<group>"; };
 		46B4D51C1DF5CE3A00B33A73 /* Remindr.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Remindr.xcdatamodel; sourceTree = "<group>"; };
+		46FF67E51E413C6F0000C9E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = VersionTwo.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +115,7 @@
 			children = (
 				46B4D4E61DF5C8BC00B33A73 /* LaunchScreen.storyboard */,
 				46B4D4E81DF5C8BC00B33A73 /* Main.storyboard */,
+				46FF67E41E413C6F0000C9E0 /* VersionTwo.storyboard */,
 			);
 			path = Base.lproj;
 			sourceTree = "<group>";
@@ -144,6 +150,8 @@
 		46B4D5191DF5CB0C00B33A73 /* Views + ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4630E5381E413E0D00B591C9 /* CustomTabBar.swift */,
+				4630E5361E413DAC00B591C9 /* CustomTabBarViewController.swift */,
 				46B4D5171DF5CA4E00B33A73 /* Walkthough */,
 				46B4D4EE1DF5C8BC00B33A73 /* LocationSearchTableViewController.swift */,
 				46B4D4EF1DF5C8BC00B33A73 /* MapViewController.swift */,
@@ -203,7 +211,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Spencer Curtis";
 				TargetAttributes = {
 					46B4D4CB1DF5C87900B33A73 = {
@@ -239,6 +247,7 @@
 				46B4D4DA1DF5C87900B33A73 /* LaunchScreen.storyboard in Resources */,
 				46B4D5011DF5C8BC00B33A73 /* Assets.xcassets in Resources */,
 				46B4D5031DF5C8BC00B33A73 /* Main.storyboard in Resources */,
+				46FF67E61E413C6F0000C9E0 /* VersionTwo.storyboard in Resources */,
 				46B4D5021DF5C8BC00B33A73 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,6 +264,7 @@
 				46B4D5161DF5C8BC00B33A73 /* WalkThroughPageViewController.swift in Sources */,
 				46B4D50C1DF5C8BC00B33A73 /* Remindr + CoreData.swift in Sources */,
 				46B4D5111DF5C8BC00B33A73 /* ReminderTableViewCell.swift in Sources */,
+				4630E5391E413E0D00B591C9 /* CustomTabBar.swift in Sources */,
 				46B4D5041DF5C8BC00B33A73 /* FifthViewController.swift in Sources */,
 				46B4D5081DF5C8BC00B33A73 /* LocationSearchTableViewController.swift in Sources */,
 				46B4D4D01DF5C87900B33A73 /* AppDelegate.swift in Sources */,
@@ -278,6 +288,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		4630E5361E413DAC00B591C9 /* CustomTabBarViewController.swift */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4630E5371E413DAC00B591C9 /* Base */,
+			);
+			name = CustomTabBarViewController.swift;
+			path = Base.lproj;
+			sourceTree = "<group>";
+		};
 		46B4D4D81DF5C87900B33A73 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -302,6 +321,14 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
+		46FF67E41E413C6F0000C9E0 /* VersionTwo.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				46FF67E51E413C6F0000C9E0 /* Base */,
+			);
+			name = VersionTwo.storyboard;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -323,6 +350,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -373,6 +401,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
