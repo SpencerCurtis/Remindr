@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4630E5391E413E0D00B591C9 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4630E5381E413E0D00B591C9 /* CustomTabBar.swift */; };
+		467030741E413F8800CEEEFF /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467030731E413F8800CEEEFF /* CustomTabBarViewController.swift */; };
 		46B4D4D01DF5C87900B33A73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4D4CF1DF5C87900B33A73 /* AppDelegate.swift */; };
 		46B4D4DA1DF5C87900B33A73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46B4D4D81DF5C87900B33A73 /* LaunchScreen.storyboard */; };
 		46B4D4FF1DF5C8BC00B33A73 /* AppColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4D4E21DF5C8BC00B33A73 /* AppColorPalette.swift */; };
@@ -38,8 +39,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4630E5371E413DAC00B591C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
 		4630E5381E413E0D00B591C9 /* CustomTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		467030731E413F8800CEEEFF /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomTabBarViewController.swift; path = ../CustomTabBarViewController.swift; sourceTree = "<group>"; };
 		46B4D4CC1DF5C87900B33A73 /* Remindr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remindr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46B4D4CF1DF5C87900B33A73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46B4D4D91DF5C87900B33A73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -151,7 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				4630E5381E413E0D00B591C9 /* CustomTabBar.swift */,
-				4630E5361E413DAC00B591C9 /* CustomTabBarViewController.swift */,
+				467030731E413F8800CEEEFF /* CustomTabBarViewController.swift */,
 				46B4D5171DF5CA4E00B33A73 /* Walkthough */,
 				46B4D4EE1DF5C8BC00B33A73 /* LocationSearchTableViewController.swift */,
 				46B4D4EF1DF5C8BC00B33A73 /* MapViewController.swift */,
@@ -261,6 +262,7 @@
 			files = (
 				46B4D5091DF5C8BC00B33A73 /* MapViewController.swift in Sources */,
 				46B4D5131DF5C8BC00B33A73 /* SixthViewController.swift in Sources */,
+				467030741E413F8800CEEEFF /* CustomTabBarViewController.swift in Sources */,
 				46B4D5161DF5C8BC00B33A73 /* WalkThroughPageViewController.swift in Sources */,
 				46B4D50C1DF5C8BC00B33A73 /* Remindr + CoreData.swift in Sources */,
 				46B4D5111DF5C8BC00B33A73 /* ReminderTableViewCell.swift in Sources */,
@@ -288,15 +290,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4630E5361E413DAC00B591C9 /* CustomTabBarViewController.swift */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4630E5371E413DAC00B591C9 /* Base */,
-			);
-			name = CustomTabBarViewController.swift;
-			path = Base.lproj;
-			sourceTree = "<group>";
-		};
 		46B4D4D81DF5C87900B33A73 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

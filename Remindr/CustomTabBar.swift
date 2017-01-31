@@ -10,13 +10,9 @@ import UIKit
 
 class CustomTabBar: UITabBar {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+    weak var dataSource: CustomTabBarDataSource?
+    
+    var tabBarItems: [UITabBarItem] = []
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,4 +24,9 @@ class CustomTabBar: UITabBar {
         
     }
 
+}
+
+
+protocol CustomTabBarDataSource: class {
+    func tabBarItemsInCustomTabBar(tabBarView: CustomTabBar) -> [UITabBarItem]
 }
