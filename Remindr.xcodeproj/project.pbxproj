@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4630E5391E413E0D00B591C9 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4630E5381E413E0D00B591C9 /* CustomTabBar.swift */; };
 		467030741E413F8800CEEEFF /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467030731E413F8800CEEEFF /* CustomTabBarViewController.swift */; };
+		467030761E41440600CEEEFF /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467030751E41440600CEEEFF /* CustomTabBarView.swift */; };
+		46AFC9571E45005100F4ADE7 /* Telekinesis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AFC9561E45005100F4ADE7 /* Telekinesis.framework */; };
+		46AFC9581E45005100F4ADE7 /* Telekinesis.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 46AFC9561E45005100F4ADE7 /* Telekinesis.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		46AFC95B1E4505F900F4ADE7 /* TabBarIconStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AFC95A1E4505F900F4ADE7 /* TabBarIconStyleKit.swift */; };
+		46AFC95D1E450A8E00F4ADE7 /* CustomTabBarStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AFC95C1E450A8E00F4ADE7 /* CustomTabBarStyleKit.swift */; };
 		46B4D4D01DF5C87900B33A73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4D4CF1DF5C87900B33A73 /* AppDelegate.swift */; };
 		46B4D4DA1DF5C87900B33A73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46B4D4D81DF5C87900B33A73 /* LaunchScreen.storyboard */; };
 		46B4D4FF1DF5C8BC00B33A73 /* AppColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4D4E21DF5C8BC00B33A73 /* AppColorPalette.swift */; };
@@ -38,9 +42,26 @@
 		46FF67E61E413C6F0000C9E0 /* VersionTwo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46FF67E41E413C6F0000C9E0 /* VersionTwo.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		46AFC9591E45005100F4ADE7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				46AFC9581E45005100F4ADE7 /* Telekinesis.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		4630E5381E413E0D00B591C9 /* CustomTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		467030731E413F8800CEEEFF /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomTabBarViewController.swift; path = ../CustomTabBarViewController.swift; sourceTree = "<group>"; };
+		467030751E41440600CEEEFF /* CustomTabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
+		46AFC9561E45005100F4ADE7 /* Telekinesis.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Telekinesis.framework; sourceTree = "<group>"; };
+		46AFC95A1E4505F900F4ADE7 /* TabBarIconStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarIconStyleKit.swift; sourceTree = "<group>"; };
+		46AFC95C1E450A8E00F4ADE7 /* CustomTabBarStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarStyleKit.swift; sourceTree = "<group>"; };
 		46B4D4CC1DF5C87900B33A73 /* Remindr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remindr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46B4D4CF1DF5C87900B33A73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46B4D4D91DF5C87900B33A73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -77,15 +98,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46AFC9571E45005100F4ADE7 /* Telekinesis.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46AFC95E1E450F8E00F4ADE7 /* Style Kits */ = {
+			isa = PBXGroup;
+			children = (
+				46AFC95C1E450A8E00F4ADE7 /* CustomTabBarStyleKit.swift */,
+				46AFC95A1E4505F900F4ADE7 /* TabBarIconStyleKit.swift */,
+			);
+			name = "Style Kits";
+			sourceTree = "<group>";
+		};
 		46B4D4C31DF5C87900B33A73 = {
 			isa = PBXGroup;
 			children = (
+				46AFC9561E45005100F4ADE7 /* Telekinesis.framework */,
 				46B4D4CE1DF5C87900B33A73 /* Remindr */,
 				46B4D4CD1DF5C87900B33A73 /* Products */,
 			);
@@ -151,8 +183,9 @@
 		46B4D5191DF5CB0C00B33A73 /* Views + ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				4630E5381E413E0D00B591C9 /* CustomTabBar.swift */,
+				467030751E41440600CEEEFF /* CustomTabBarView.swift */,
 				467030731E413F8800CEEEFF /* CustomTabBarViewController.swift */,
+				46AFC95E1E450F8E00F4ADE7 /* Style Kits */,
 				46B4D5171DF5CA4E00B33A73 /* Walkthough */,
 				46B4D4EE1DF5C8BC00B33A73 /* LocationSearchTableViewController.swift */,
 				46B4D4EF1DF5C8BC00B33A73 /* MapViewController.swift */,
@@ -195,6 +228,7 @@
 				46B4D4C81DF5C87900B33A73 /* Sources */,
 				46B4D4C91DF5C87900B33A73 /* Frameworks */,
 				46B4D4CA1DF5C87900B33A73 /* Resources */,
+				46AFC9591E45005100F4ADE7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -266,11 +300,13 @@
 				46B4D5161DF5C8BC00B33A73 /* WalkThroughPageViewController.swift in Sources */,
 				46B4D50C1DF5C8BC00B33A73 /* Remindr + CoreData.swift in Sources */,
 				46B4D5111DF5C8BC00B33A73 /* ReminderTableViewCell.swift in Sources */,
-				4630E5391E413E0D00B591C9 /* CustomTabBar.swift in Sources */,
 				46B4D5041DF5C8BC00B33A73 /* FifthViewController.swift in Sources */,
+				46AFC95B1E4505F900F4ADE7 /* TabBarIconStyleKit.swift in Sources */,
 				46B4D5081DF5C8BC00B33A73 /* LocationSearchTableViewController.swift in Sources */,
+				46AFC95D1E450A8E00F4ADE7 /* CustomTabBarStyleKit.swift in Sources */,
 				46B4D4D01DF5C87900B33A73 /* AppDelegate.swift in Sources */,
 				46B4D5121DF5C8BC00B33A73 /* SecondViewController.swift in Sources */,
+				467030761E41440600CEEEFF /* CustomTabBarView.swift in Sources */,
 				46B4D50B1DF5C8BC00B33A73 /* RegionController.swift in Sources */,
 				46B4D50A1DF5C8BC00B33A73 /* NotificationController.swift in Sources */,
 				46B4D50F1DF5C8BC00B33A73 /* ReminderDetailViewController.swift in Sources */,
@@ -425,6 +461,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = W4BT774F98;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Remindr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SpencerCurtis.Remindr;
@@ -438,6 +478,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = W4BT774F98;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Remindr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SpencerCurtis.Remindr;
