@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		467030741E413F8800CEEEFF /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467030731E413F8800CEEEFF /* CustomTabBarViewController.swift */; };
-		467030761E41440600CEEEFF /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467030751E41440600CEEEFF /* CustomTabBarView.swift */; };
+		467030761E41440600CEEEFF /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467030751E41440600CEEEFF /* CustomTabBar.swift */; };
 		46AFC9571E45005100F4ADE7 /* Telekinesis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AFC9561E45005100F4ADE7 /* Telekinesis.framework */; };
 		46AFC9581E45005100F4ADE7 /* Telekinesis.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 46AFC9561E45005100F4ADE7 /* Telekinesis.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		46AFC95B1E4505F900F4ADE7 /* TabBarIconStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AFC95A1E4505F900F4ADE7 /* TabBarIconStyleKit.swift */; };
@@ -58,7 +58,7 @@
 
 /* Begin PBXFileReference section */
 		467030731E413F8800CEEEFF /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomTabBarViewController.swift; path = ../CustomTabBarViewController.swift; sourceTree = "<group>"; };
-		467030751E41440600CEEEFF /* CustomTabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
+		467030751E41440600CEEEFF /* CustomTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		46AFC9561E45005100F4ADE7 /* Telekinesis.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Telekinesis.framework; sourceTree = "<group>"; };
 		46AFC95A1E4505F900F4ADE7 /* TabBarIconStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarIconStyleKit.swift; sourceTree = "<group>"; };
 		46AFC95C1E450A8E00F4ADE7 /* CustomTabBarStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarStyleKit.swift; sourceTree = "<group>"; };
@@ -183,7 +183,7 @@
 		46B4D5191DF5CB0C00B33A73 /* Views + ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				467030751E41440600CEEEFF /* CustomTabBarView.swift */,
+				467030751E41440600CEEEFF /* CustomTabBar.swift */,
 				467030731E413F8800CEEEFF /* CustomTabBarViewController.swift */,
 				46AFC95E1E450F8E00F4ADE7 /* Style Kits */,
 				46B4D5171DF5CA4E00B33A73 /* Walkthough */,
@@ -306,7 +306,7 @@
 				46AFC95D1E450A8E00F4ADE7 /* CustomTabBarStyleKit.swift in Sources */,
 				46B4D4D01DF5C87900B33A73 /* AppDelegate.swift in Sources */,
 				46B4D5121DF5C8BC00B33A73 /* SecondViewController.swift in Sources */,
-				467030761E41440600CEEEFF /* CustomTabBarView.swift in Sources */,
+				467030761E41440600CEEEFF /* CustomTabBar.swift in Sources */,
 				46B4D50B1DF5C8BC00B33A73 /* RegionController.swift in Sources */,
 				46B4D50A1DF5C8BC00B33A73 /* NotificationController.swift in Sources */,
 				46B4D50F1DF5C8BC00B33A73 /* ReminderDetailViewController.swift in Sources */,

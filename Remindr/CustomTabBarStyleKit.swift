@@ -28,6 +28,15 @@ public class CustomTabBarStyleKit : NSObject {
         context.scaleBy(x: resizedFrame.width / 376, y: resizedFrame.height / 57)
 
 
+        //// Color Declarations
+        let silver = UIColor(red: 0.757, green: 0.757, blue: 0.757, alpha: 1.000)
+        var silverRedComponent: CGFloat = 1
+        var silverGreenComponent: CGFloat = 1
+        var silverBlueComponent: CGFloat = 1
+        silver.getRed(&silverRedComponent, green: &silverGreenComponent, blue: &silverBlueComponent, alpha: nil)
+
+        let silver3 = UIColor(red: (silverRedComponent * 0.8), green: (silverGreenComponent * 0.8), blue: (silverBlueComponent * 0.8), alpha: (silver.cgColor.alpha * 0.8 + 0.2))
+
         //// Bezier Drawing
         let bezierPath = UIBezierPath()
         bezierPath.move(to: CGPoint(x: 0, y: -0))
@@ -37,7 +46,7 @@ public class CustomTabBarStyleKit : NSObject {
         bezierPath.addLine(to: CGPoint(x: 0, y: 57))
         bezierPath.addLine(to: CGPoint(x: 0, y: -0))
         bezierPath.close()
-        UIColor.gray.setFill()
+        silver3.setFill()
         bezierPath.fill()
         
         context.restoreGState()

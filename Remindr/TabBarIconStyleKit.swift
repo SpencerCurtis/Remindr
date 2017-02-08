@@ -287,13 +287,14 @@ public class TabBarIconStyleKit : NSObject {
 
         //// Color Declarations
         let white = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1.000)
-        let remindrGray = UIColor(red: 0.580, green: 0.608, blue: 0.627, alpha: 1.000)
+        let silver = UIColor(red: 0.757, green: 0.757, blue: 0.757, alpha: 1.000)
+        let silver3 = silver.shadow(withLevel: 0.2)
 
         //// Oval 4 Drawing
-        let oval4Path = UIBezierPath(ovalIn: CGRect(x: 2, y: 3, width: 145, height: 145))
+        let oval4Path = UIBezierPath(ovalIn: CGRect(x: 2.5, y: 2.5, width: 145, height: 145))
         TabBarIconStyleKit.remindrCyan.setFill()
         oval4Path.fill()
-        remindrGray.setStroke()
+        silver3.setStroke()
         oval4Path.lineWidth = 3
         oval4Path.stroke()
 
