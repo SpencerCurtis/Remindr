@@ -42,7 +42,9 @@ class CustomTabBar: UIView {
         self.incompleteListButton.addTarget(self, action: #selector(didTapButton(sender:)), for: .touchDown)
         self.backgroundColor = .clear
         setupBarItems()
-        setupConstraints()
+        setupConstraints {
+            NotificationCenter.default.post(name: addNewRemindrButtonNotification, object: nil, userInfo: ["button": newRemindrButtonUnselected])
+        }
         let notificationName = Notification.Name("TelekinesisDidChangeStyleKitNotification")
         NotificationCenter.default.addObserver(self, selector: #selector(resetImageWithTelekinesis), name: notificationName, object: nil)
         
@@ -94,7 +96,6 @@ class CustomTabBar: UIView {
         newRemindrButtonUnselected.addTarget(self, action: #selector(transitionNewRemindrButtonToCancelButton), for: .touchDown)
         newRemindrButtonUnselected.adjustsImageWhenHighlighted = false
         self.addSubview(newRemindrButtonUnselected)
-        
         
     }
     
@@ -183,7 +184,7 @@ protocol CustomTabBarDelegate: class {
 
 extension CustomTabBar {
     
-    func setupConstraints() {
+    func setupConstraints(completion: () -> Void) {
         incompleteListImageView.translatesAutoresizingMaskIntoConstraints = false
         incompleteListButton.translatesAutoresizingMaskIntoConstraints = false
         completeListImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -224,6 +225,8 @@ extension CustomTabBar {
         let newRemindrButtonSelectedWidth = NSLayoutConstraint(item: newRemindrButtonSelected, attribute: .width, relatedBy: .equal, toItem: newRemindrButtonSelected, attribute: .height, multiplier: 1, constant: 0)
         
         self.addConstraints([incompleteListButtonLeading, incompleteListButtonTop, incompleteListButtonBottom, incompleteListButtonWidth, incompleteListImageViewCenterX, incompleteListImageViewCenterY, incompleteListImageViewHeight, incompleteListImageViewWidth,completeListButtonTrailing, completeListButtonTop, completeListButtonBottom, completeListButtonWidth, completeListImageViewCenterX, completeListImageViewCenterY, completeListImageViewHeight, completeListImageViewWidth, newRemindrButtonUnselectedCenterX, newRemindrButtonUnselectedCenterY, newRemindrButtonUnselectedHeight, newRemindrButtonUnselectedWidth, newRemindrButtonSelectedCenterX, newRemindrButtonSelectedCenterY, newRemindrButtonSelectedHeight, newRemindrButtonSelectedWidth])
+        
+        completion()
         
     }
 }

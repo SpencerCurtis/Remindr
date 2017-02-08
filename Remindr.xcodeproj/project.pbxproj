@@ -19,7 +19,6 @@
 		46B4D4D01DF5C87900B33A73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4D4CF1DF5C87900B33A73 /* AppDelegate.swift */; };
 		46B4D4DA1DF5C87900B33A73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46B4D4D81DF5C87900B33A73 /* LaunchScreen.storyboard */; };
 		46B4D4FF1DF5C8BC00B33A73 /* AppColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4D4E21DF5C8BC00B33A73 /* AppColorPalette.swift */; };
-		46B4D5001DF5C8BC00B33A73 /* AppearanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4D4E31DF5C8BC00B33A73 /* AppearanceController.swift */; };
 		46B4D5011DF5C8BC00B33A73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46B4D4E41DF5C8BC00B33A73 /* Assets.xcassets */; };
 		46B4D5021DF5C8BC00B33A73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46B4D4E61DF5C8BC00B33A73 /* LaunchScreen.storyboard */; };
 		46B4D5031DF5C8BC00B33A73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46B4D4E81DF5C8BC00B33A73 /* Main.storyboard */; };
@@ -35,7 +34,6 @@
 		46B4D50E1DF5C8BC00B33A73 /* ReminderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4D4F51DF5C8BC00B33A73 /* ReminderController.swift */; };
 		46B4D50F1DF5C8BC00B33A73 /* ReminderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4D4F61DF5C8BC00B33A73 /* ReminderDetailViewController.swift */; };
 		46B4D5101DF5C8BC00B33A73 /* ReminderListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4D4F71DF5C8BC00B33A73 /* ReminderListTableViewController.swift */; };
-		46B4D5111DF5C8BC00B33A73 /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4D4F81DF5C8BC00B33A73 /* ReminderTableViewCell.swift */; };
 		46B4D5121DF5C8BC00B33A73 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4D4F91DF5C8BC00B33A73 /* SecondViewController.swift */; };
 		46B4D5131DF5C8BC00B33A73 /* SixthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4D4FA1DF5C8BC00B33A73 /* SixthViewController.swift */; };
 		46B4D5141DF5C8BC00B33A73 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4D4FB1DF5C8BC00B33A73 /* Stack.swift */; };
@@ -73,7 +71,6 @@
 		46B4D4D91DF5C87900B33A73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46B4D4DB1DF5C87900B33A73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46B4D4E21DF5C8BC00B33A73 /* AppColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColorPalette.swift; sourceTree = "<group>"; };
-		46B4D4E31DF5C8BC00B33A73 /* AppearanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceController.swift; sourceTree = "<group>"; };
 		46B4D4E41DF5C8BC00B33A73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46B4D4E71DF5C8BC00B33A73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46B4D4E91DF5C8BC00B33A73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
@@ -89,7 +86,6 @@
 		46B4D4F51DF5C8BC00B33A73 /* ReminderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderController.swift; sourceTree = "<group>"; };
 		46B4D4F61DF5C8BC00B33A73 /* ReminderDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderDetailViewController.swift; sourceTree = "<group>"; };
 		46B4D4F71DF5C8BC00B33A73 /* ReminderListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderListTableViewController.swift; sourceTree = "<group>"; };
-		46B4D4F81DF5C8BC00B33A73 /* ReminderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderTableViewCell.swift; sourceTree = "<group>"; };
 		46B4D4F91DF5C8BC00B33A73 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = Remindr/SecondViewController.swift; sourceTree = "<group>"; };
 		46B4D4FA1DF5C8BC00B33A73 /* SixthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SixthViewController.swift; path = Remindr/SixthViewController.swift; sourceTree = "<group>"; };
 		46B4D4FB1DF5C8BC00B33A73 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
@@ -114,7 +110,6 @@
 		4676FF0B1E4B0239009B9D7C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				46B4D4F81DF5C8BC00B33A73 /* ReminderTableViewCell.swift */,
 				4676FF091E4B0221009B9D7C /* IncompleteRemindrTableViewCell.swift */,
 				467030751E41440600CEEEFF /* CustomTabBar.swift */,
 				467030731E413F8800CEEEFF /* CustomTabBarViewController.swift */,
@@ -190,7 +185,6 @@
 		46B4D5181DF5CAFA00B33A73 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				46B4D4E31DF5C8BC00B33A73 /* AppearanceController.swift */,
 				46B4D4ED1DF5C8BC00B33A73 /* LocationController.swift */,
 				46B4D4F01DF5C8BC00B33A73 /* NotificationController.swift */,
 				46B4D4F11DF5C8BC00B33A73 /* RegionController.swift */,
@@ -317,7 +311,6 @@
 				467030741E413F8800CEEEFF /* CustomTabBarViewController.swift in Sources */,
 				46B4D5161DF5C8BC00B33A73 /* WalkThroughPageViewController.swift in Sources */,
 				46B4D50C1DF5C8BC00B33A73 /* Remindr + CoreData.swift in Sources */,
-				46B4D5111DF5C8BC00B33A73 /* ReminderTableViewCell.swift in Sources */,
 				4676FF0D1E4B0484009B9D7C /* IncompleteRemindrTableViewController.swift in Sources */,
 				46B4D5041DF5C8BC00B33A73 /* FifthViewController.swift in Sources */,
 				46AFC95B1E4505F900F4ADE7 /* TabBarIconStyleKit.swift in Sources */,
@@ -334,7 +327,6 @@
 				46B4D5061DF5C8BC00B33A73 /* FourthViewController.swift in Sources */,
 				46B4D5141DF5C8BC00B33A73 /* Stack.swift in Sources */,
 				46B4D4FF1DF5C8BC00B33A73 /* AppColorPalette.swift in Sources */,
-				46B4D5001DF5C8BC00B33A73 /* AppearanceController.swift in Sources */,
 				46B4D50E1DF5C8BC00B33A73 /* ReminderController.swift in Sources */,
 				46B4D5071DF5C8BC00B33A73 /* LocationController.swift in Sources */,
 				46B4D51D1DF5CE3A00B33A73 /* Remindr.xcdatamodeld in Sources */,
