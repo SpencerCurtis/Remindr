@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		467030741E413F8800CEEEFF /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467030731E413F8800CEEEFF /* CustomTabBarViewController.swift */; };
 		467030761E41440600CEEEFF /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467030751E41440600CEEEFF /* CustomTabBar.swift */; };
+		4676FF0A1E4B0221009B9D7C /* IncompleteRemindrTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4676FF091E4B0221009B9D7C /* IncompleteRemindrTableViewCell.swift */; };
+		4676FF0D1E4B0484009B9D7C /* IncompleteRemindrTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4676FF0C1E4B0484009B9D7C /* IncompleteRemindrTableViewController.swift */; };
+		4676FF0F1E4B081F009B9D7C /* MockRemindr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4676FF0E1E4B081F009B9D7C /* MockRemindr.swift */; };
 		46AFC9571E45005100F4ADE7 /* Telekinesis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AFC9561E45005100F4ADE7 /* Telekinesis.framework */; };
 		46AFC9581E45005100F4ADE7 /* Telekinesis.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 46AFC9561E45005100F4ADE7 /* Telekinesis.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		46AFC95B1E4505F900F4ADE7 /* TabBarIconStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AFC95A1E4505F900F4ADE7 /* TabBarIconStyleKit.swift */; };
@@ -59,6 +62,9 @@
 /* Begin PBXFileReference section */
 		467030731E413F8800CEEEFF /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomTabBarViewController.swift; path = ../CustomTabBarViewController.swift; sourceTree = "<group>"; };
 		467030751E41440600CEEEFF /* CustomTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		4676FF091E4B0221009B9D7C /* IncompleteRemindrTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncompleteRemindrTableViewCell.swift; sourceTree = "<group>"; };
+		4676FF0C1E4B0484009B9D7C /* IncompleteRemindrTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncompleteRemindrTableViewController.swift; sourceTree = "<group>"; };
+		4676FF0E1E4B081F009B9D7C /* MockRemindr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockRemindr.swift; path = ../MockRemindr.swift; sourceTree = "<group>"; };
 		46AFC9561E45005100F4ADE7 /* Telekinesis.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Telekinesis.framework; sourceTree = "<group>"; };
 		46AFC95A1E4505F900F4ADE7 /* TabBarIconStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarIconStyleKit.swift; sourceTree = "<group>"; };
 		46AFC95C1E450A8E00F4ADE7 /* CustomTabBarStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarStyleKit.swift; sourceTree = "<group>"; };
@@ -105,6 +111,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4676FF0B1E4B0239009B9D7C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				46B4D4F81DF5C8BC00B33A73 /* ReminderTableViewCell.swift */,
+				4676FF091E4B0221009B9D7C /* IncompleteRemindrTableViewCell.swift */,
+				467030751E41440600CEEEFF /* CustomTabBar.swift */,
+				467030731E413F8800CEEEFF /* CustomTabBarViewController.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		46AFC95E1E450F8E00F4ADE7 /* Style Kits */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,7 +152,9 @@
 			isa = PBXGroup;
 			children = (
 				46B4D4E51DF5C8BC00B33A73 /* Base.lproj */,
-				46B4D5191DF5CB0C00B33A73 /* Views + ViewControllers */,
+				46B4D5191DF5CB0C00B33A73 /* View Controllers */,
+				4676FF0B1E4B0239009B9D7C /* Views */,
+				46AFC95E1E450F8E00F4ADE7 /* Style Kits */,
 				46B4D5181DF5CAFA00B33A73 /* Controllers */,
 				46B4D51A1DF5CB5100B33A73 /* Model + CoreData */,
 				46D977571DF5DFD800FCE0C6 /* Helpers */,
@@ -180,26 +199,24 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
-		46B4D5191DF5CB0C00B33A73 /* Views + ViewControllers */ = {
+		46B4D5191DF5CB0C00B33A73 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				467030751E41440600CEEEFF /* CustomTabBar.swift */,
-				467030731E413F8800CEEEFF /* CustomTabBarViewController.swift */,
-				46AFC95E1E450F8E00F4ADE7 /* Style Kits */,
 				46B4D5171DF5CA4E00B33A73 /* Walkthough */,
 				46B4D4EE1DF5C8BC00B33A73 /* LocationSearchTableViewController.swift */,
 				46B4D4EF1DF5C8BC00B33A73 /* MapViewController.swift */,
 				46B4D4F61DF5C8BC00B33A73 /* ReminderDetailViewController.swift */,
 				46B4D4F71DF5C8BC00B33A73 /* ReminderListTableViewController.swift */,
-				46B4D4F81DF5C8BC00B33A73 /* ReminderTableViewCell.swift */,
+				4676FF0C1E4B0484009B9D7C /* IncompleteRemindrTableViewController.swift */,
 			);
-			name = "Views + ViewControllers";
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 		46B4D51A1DF5CB5100B33A73 /* Model + CoreData */ = {
 			isa = PBXGroup;
 			children = (
 				46B4D4F21DF5C8BC00B33A73 /* Remindr + CoreData.swift */,
+				4676FF0E1E4B081F009B9D7C /* MockRemindr.swift */,
 				46B4D51B1DF5CE3A00B33A73 /* Remindr.xcdatamodeld */,
 				46B4D4FB1DF5C8BC00B33A73 /* Stack.swift */,
 			);
@@ -295,11 +312,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				46B4D5091DF5C8BC00B33A73 /* MapViewController.swift in Sources */,
+				4676FF0F1E4B081F009B9D7C /* MockRemindr.swift in Sources */,
 				46B4D5131DF5C8BC00B33A73 /* SixthViewController.swift in Sources */,
 				467030741E413F8800CEEEFF /* CustomTabBarViewController.swift in Sources */,
 				46B4D5161DF5C8BC00B33A73 /* WalkThroughPageViewController.swift in Sources */,
 				46B4D50C1DF5C8BC00B33A73 /* Remindr + CoreData.swift in Sources */,
 				46B4D5111DF5C8BC00B33A73 /* ReminderTableViewCell.swift in Sources */,
+				4676FF0D1E4B0484009B9D7C /* IncompleteRemindrTableViewController.swift in Sources */,
 				46B4D5041DF5C8BC00B33A73 /* FifthViewController.swift in Sources */,
 				46AFC95B1E4505F900F4ADE7 /* TabBarIconStyleKit.swift in Sources */,
 				46B4D5081DF5C8BC00B33A73 /* LocationSearchTableViewController.swift in Sources */,
@@ -308,6 +327,7 @@
 				46B4D5121DF5C8BC00B33A73 /* SecondViewController.swift in Sources */,
 				467030761E41440600CEEEFF /* CustomTabBar.swift in Sources */,
 				46B4D50B1DF5C8BC00B33A73 /* RegionController.swift in Sources */,
+				4676FF0A1E4B0221009B9D7C /* IncompleteRemindrTableViewCell.swift in Sources */,
 				46B4D50A1DF5C8BC00B33A73 /* NotificationController.swift in Sources */,
 				46B4D50F1DF5C8BC00B33A73 /* ReminderDetailViewController.swift in Sources */,
 				46B4D5101DF5C8BC00B33A73 /* ReminderListTableViewController.swift in Sources */,
