@@ -139,7 +139,7 @@ class CustomTabBar: UIView {
             self.bringSubview(toFront: self.newRemindrButtonSelected)
             self.newRemindrButtonIsSelected = true
             self.newRemindrButtonIsAnimating = false
-
+            
         }
     }
     

@@ -105,8 +105,8 @@ class CustomTabBarViewController: UITabBarController, CustomTabBarDelegate {
         
         DispatchQueue.main.async {
             
+            // 0.4175 for rotation is perfect for 3 buttons.
             self.show(subMenuButtons: self.subMenuButtons, distanceFromMenuButton: 80.0, percentOfFullCircle: 1/3, rotation: 0.4175, withDuration: 0.5)
-            
             UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.8, options: .curveEaseIn, animations: {
                 self.opaqueViewForRemindrTypeSelection.alpha = 0.6
             }, completion: nil)
