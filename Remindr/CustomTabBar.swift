@@ -36,6 +36,8 @@ class CustomTabBar: UIView {
         incompleteListButton.tag = 0
         completeListButton.tag = 1
         
+        NotificationCenter.default.addObserver(self, selector: #selector(transitionNewRemindrButtonToUnselectedButton), name: cancelNewRemindrNotification, object: nil)
+        
         self.completeListButton.addTarget(self, action: #selector(didTapButton(sender:)), for: .touchDown)
         self.incompleteListButton.addTarget(self, action: #selector(didTapButton(sender:)), for: .touchDown)
         self.backgroundColor = .clear
@@ -126,6 +128,8 @@ class CustomTabBar: UIView {
         
         newRemindrButtonIsAnimating = true
         
+        delegate?.addNewRemindrButtonSelected()
+        
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.6, options: .curveEaseInOut, animations: {
             self.newRemindrButtonUnselected.transform = CGAffineTransform(rotationAngle: self.degreesToRadians(degrees: 45))
             self.newRemindrButtonSelected.transform = CGAffineTransform(rotationAngle: self.degreesToRadians(degrees: 45))
@@ -141,6 +145,8 @@ class CustomTabBar: UIView {
     func transitionNewRemindrButtonToUnselectedButton() {
         
         newRemindrButtonIsAnimating = true
+        
+        delegate?.addNewRemindrButtonDeselected()
         
         self.bringSubview(toFront: newRemindrButtonUnselected)
         
@@ -169,7 +175,8 @@ class CustomTabBar: UIView {
 
 protocol CustomTabBarDelegate: class {
     func tabBarButtonTapped(index: Int)
-    func segue(notNeededMaybe: String)
+    func addNewRemindrButtonSelected()
+    func addNewRemindrButtonDeselected()
 }
 
 // MARK: - Constraints

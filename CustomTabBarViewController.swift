@@ -8,9 +8,13 @@
 
 import UIKit
 
+let cancelNewRemindrNotification = Notification.Name("cancelNewRemindr")
+
 class CustomTabBarViewController: UITabBarController, CustomTabBarDelegate {
     
     var customTabBar: CustomTabBar!
+    var opaqueViewForRemindrTypeSelection: UIView!
+    
     
     override var selectedIndex: Int {
         didSet {
@@ -21,16 +25,8 @@ class CustomTabBarViewController: UITabBarController, CustomTabBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tabBar.isHidden = true
-
-        self.tabBar.backgroundColor = .clear
-        customTabBar = CustomTabBar()
-        customTabBar.delegate = self
-        customTabBar.selectIndex(index: 0)
-        
-        self.view.addSubview(customTabBar)
-        constraintsFor(customTabBar: customTabBar)
-        
+        setupCustomTabBar()
+        setUpOpaqueViewForSelectingNewRemindrType()
     }
     
     func constraintsFor(customTabBar: CustomTabBar) {
@@ -49,14 +45,69 @@ class CustomTabBarViewController: UITabBarController, CustomTabBarDelegate {
         selectedIndex = index
     }
     
-    func segue(notNeededMaybe: String) {
+    func setupCustomTabBar() {
+        self.tabBar.isHidden = true
         
+        self.tabBar.backgroundColor = .clear
+        customTabBar = CustomTabBar()
+        customTabBar.delegate = self
+        customTabBar.selectIndex(index: 0)
+        
+        self.view.addSubview(customTabBar)
+        constraintsFor(customTabBar: customTabBar)
+        
+    }
+    
+    func setUpOpaqueViewForSelectingNewRemindrType() {
+        let opaqueView = UIView(frame: UIScreen.main.bounds)
+        
+        opaqueView.backgroundColor = .black
+        opaqueView.alpha = 0
+        
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissOpaqueViewForRemindrTypeSelection))
+        let secondTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(notifyCustomTabBarToTransitionToUnselectedState))
+
+        
+        opaqueView.addGestureRecognizer(tapRecognizer)
+        opaqueView.addGestureRecognizer(secondTapRecognizer)
+        
+        opaqueViewForRemindrTypeSelection = opaqueView
+    }
+    
+    func addNewRemindrButtonSelected() {
+        
+        self.view.insertSubview(opaqueViewForRemindrTypeSelection, belowSubview: customTabBar)
+        
+        UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.8, options: .curveEaseIn, animations: {
+            self.opaqueViewForRemindrTypeSelection.alpha = 0.6
+        }, completion: nil)
+    }
+    
+    func addNewRemindrButtonDeselected() {
+        dismissOpaqueViewForRemindrTypeSelection()
+    }
+    
+    func notifyCustomTabBarToTransitionToUnselectedState() {
+        NotificationCenter.default.post(name: cancelNewRemindrNotification, object: nil)
+    }
+    
+    func dismissOpaqueViewForRemindrTypeSelection() {
+        
+        
+        UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.8, options: .curveEaseIn, animations: {
+            self.opaqueViewForRemindrTypeSelection.alpha = 0
+        }) { (_) in
+            self.opaqueViewForRemindrTypeSelection.removeFromSuperview()
+        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
     /*
      // MARK: - Navigation
      
