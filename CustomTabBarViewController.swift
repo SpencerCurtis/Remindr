@@ -47,7 +47,6 @@ class CustomTabBarViewController: UITabBarController, CustomTabBarDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print(mainMenuButton.frame, mainMenuButton.bounds)
         
         guard let mainMenuButtonCenter = self.mainMenuButton.superview?.convert(mainMenuButton.center, to: self.view), mainMenuButton != nil else { return }
         self.mainMenuButtonCenter = mainMenuButtonCenter
