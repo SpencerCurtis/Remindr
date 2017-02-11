@@ -21,7 +21,7 @@ class IncompleteRemindrTableViewCell: UITableViewCell {
     
     var titleLabelStrikethroughLayer: CAShapeLayer!
     var panType: PanType = .none
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -68,11 +68,30 @@ class IncompleteRemindrTableViewCell: UITableViewCell {
     }
     
     func handlePan(sender: UIPanGestureRecognizer) {
-        if !didSetup { setup(); didSetup = true}
-
+        if !didSetup { setup(); didSetup = true }
+        
         switch sender.state {
         case .began:
             self.panType = sender.translation(in: self).x > 0 ? .complete : .delete
+            if self.panType == .complete {
+                guard titleLabelStrikethroughLayer.strokeStart != 1 && titleLabelStrikethroughLayer.strokeEnd != 1 else {
+                    CATransaction.begin()
+                    CATransaction.setDisableActions(true)
+                    titleLabelStrikethroughLayer.strokeStart = 0
+                    titleLabelStrikethroughLayer.strokeEnd = 0
+                    CATransaction.commit()
+                    return
+                }
+            } else if panType == .delete {
+                guard titleLabelStrikethroughLayer.strokeStart != 0 && titleLabelStrikethroughLayer.strokeEnd != 0 else {
+                    CATransaction.begin()
+                    CATransaction.setDisableActions(true)
+                    titleLabelStrikethroughLayer.strokeStart = 1
+                    titleLabelStrikethroughLayer.strokeEnd = 1
+                    CATransaction.commit()
+                    return
+                }
+            }
         case .changed:
             let xTranslation = sender.translation(in: self).x
             
@@ -88,18 +107,13 @@ class IncompleteRemindrTableViewCell: UITableViewCell {
             
             if self.panType == .complete {
                 
-                guard titleLabelStrikethroughLayer.strokeStart != 1 && titleLabelStrikethroughLayer.strokeEnd != 1 else {
-                    CATransaction.begin()
-                    CATransaction.setDisableActions(true)
-                    titleLabelStrikethroughLayer.strokeStart = 0
-                    titleLabelStrikethroughLayer.strokeEnd = 0
-                    CATransaction.commit()
-                    return
+                
+                if self.percentagePanned > self.previousPercentagePanned {
+                    titleLabelStrikethroughLayer.strokeEnd += 0.05
+                } else if self.percentagePanned < self.previousPercentagePanned {
+                    titleLabelStrikethroughLayer.strokeEnd -= 0.05
                 }
-
                 
-                
-                titleLabelStrikethroughLayer.strokeEnd = percentagePanned
                 
                 if titleLabelStrikethroughLayer.strokeEnd <= 0.8, titleLabelStrikethroughLayer.strokeColor != UIColor.black.cgColor {
                     titleLabelStrikethroughLayer.strokeColor = UIColor.black.cgColor
@@ -109,25 +123,17 @@ class IncompleteRemindrTableViewCell: UITableViewCell {
                 
             } else if self.panType == .delete {
                 
-                guard titleLabelStrikethroughLayer.strokeStart != 0 && titleLabelStrikethroughLayer.strokeEnd != 0 else {
-                    CATransaction.begin()
-                    CATransaction.setDisableActions(true)
-                    titleLabelStrikethroughLayer.strokeStart = 1
-                    titleLabelStrikethroughLayer.strokeEnd = 1
-                    CATransaction.commit()
-                    return
+                if self.percentagePanned < self.previousPercentagePanned {
+                    titleLabelStrikethroughLayer.strokeStart -= 0.05
+                } else if self.percentagePanned > self.previousPercentagePanned {
+                    titleLabelStrikethroughLayer.strokeStart += 0.05
                 }
-                titleLabel.center.x += percentagePanned * 2
-
-                titleLabelStrikethroughLayer.strokeStart = ((1 + percentagePanned) * 2)
                 
                 if titleLabelStrikethroughLayer.strokeStart >= 0.2, titleLabelStrikethroughLayer.strokeColor != UIColor.black.cgColor {
                     titleLabelStrikethroughLayer.strokeColor = UIColor.black.cgColor
                 } else if titleLabelStrikethroughLayer.strokeStart < 0.2, titleLabelStrikethroughLayer.strokeColor != UIColor.red.cgColor {
                     titleLabelStrikethroughLayer.strokeColor = UIColor.red.cgColor
                 }
-                
-                
             }
             
             

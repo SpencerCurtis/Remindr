@@ -16,7 +16,7 @@ class IncompleteRemindrTableViewController: UITableViewController, UIGestureReco
         super.viewDidLoad()
         
         let r1 = MockRemindr(title: "This is a test", type: "Type here")
-        let r2 = MockRemindr(title: "This is a test", type: "Type here")
+        let r2 = MockRemindr(title: "This is a longer test message", type: "Type here")
         
         mockDataSource.append(r1)
         mockDataSource.append(r2)
@@ -35,6 +35,7 @@ class IncompleteRemindrTableViewController: UITableViewController, UIGestureReco
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90
     }
+    
     func cellPannedUsing(panGestureRecognizer: UIPanGestureRecognizer) {
         
         var cell: IncompleteRemindrTableViewCell?
